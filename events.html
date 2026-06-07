@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Services | Colours and Codes</title>
+  <meta name="description" content="Corporate event production, experiential brand activations, and staging design across Nigeria.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-hero {
+      padding: 160px 6% 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .service-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 80px 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .service-capabilities h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 30px;
+      color: var(--color-green);
+    }
+    .capability-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .capability-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .capability-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .benefits-panel {
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 50px;
+    }
+    .benefits-panel h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 30px;
+    }
+    .benefit-stat {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 24px;
+    }
+    .stat-number {
+      font-family: var(--font-accent);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-green);
+    }
+    .stat-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 992px) {
+      .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle active">What We Do</a>
+        <ul class="dropdown-menu">
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="gifts.html">Gifts</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="btn-pill" id="start-project-btn">Start a Project</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="service-hero">
+    <h1>Creating Unforgettable <span style="color: var(--color-green);">Events</span></h1>
+    <p>Bringing Your Vision to Life with structural event architecture, premium stage production, and meticulous execution.</p>
+    <div class="media-container">
+      <img src="assets/story.png" alt="High-profile corporate event setup in Lagos" />
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL GRID -->
+  <section class="service-detail-grid">
+    <div class="service-capabilities">
+      <h2>What We Do</h2>
+      <div class="capability-list">
+        
+        <div class="capability-item">
+          <h3>Strategic Concept Development</h3>
+          <p>Designing overarching event themes, staging layouts, spatial flows, and visual systems that align with your brand positioning.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>Full Production & Execution</h3>
+          <p>Managing structural setups, stage engineering, audio-visual grids, lighting displays, and real-time tech queues on site.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>Vendor & Logistics Management</h3>
+          <p>Securing premium catering partners, event spaces, guest registrations, VIP hospitality services, and strict security compliance.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>Post-Event Content Rollout</h3>
+          <p>Editing event recap highlight reels, commercial photography galleries, and distribution media clips to maximize organic exposure post-event.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BENEFITS PANEL -->
+    <div class="benefits-panel">
+      <h2>Why Invest in Structured Events?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        An event isn't simply a gathering; it's a physical brand portal. Experiential design yields unparalleled face-to-face networking depth and positions your firm as an active industry driver.
+      </p>
+      
+      <div class="capability-list" style="margin-top: 30px;">
+        <div class="capability-item">
+          <h4 style="color: var(--color-yellow);">Amplified Brand Awareness</h4>
+          <p style="font-size: 0.9rem;">Immersive setups prompt active attendee social sharing, broadening your brand's digital reach organically.</p>
+        </div>
+
+        <div class="capability-item">
+          <h4 style="color: var(--color-yellow);">Direct Business Networking</h4>
+          <p style="font-size: 0.9rem;">Gathering top industry decision-makers in a premium setting fosters trust and catalyzes new transaction pipelines.</p>
+        </div>
+      </div>
+
+      <div class="benefit-stat">
+        <div class="stat-number">95%</div>
+        <div class="stat-text">
+          Of marketing directors agree that live events provide key stakeholders with a powerful platform to build deeper brand relationships (Source: Bizzabo Event Marketing Report).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT PROJECTS PREVIEW -->
+  <section class="work-section" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <h2 style="margin-bottom: 40px; text-align: center;">Recent Event Successes</h2>
+    <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
+      
+      <!-- Card 1: FUTURE -->
+      <div class="work-card work-card-2">
+        <div class="card-top">
+          <span class="card-logo">FUTURE</span>
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+        <img src="assets/future.png" alt="Future branding campaign" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
+        <div class="card-bottom">
+          <h3>The Tech Summit Rollout</h3>
+          <p>Stage Architecture & Audio-Visual Production</p>
+        </div>
+      </div>
+
+      <!-- Card 2: STORY -->
+      <div class="work-card work-card-3" style="background-color: var(--bg-secondary);">
+        <div class="card-top">
+          <span class="card-logo">COLOURS</span>
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+        <img src="assets/story.png" alt="Creative studio collab" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
+        <div class="card-bottom">
+          <h3>Annual Creative Showcase</h3>
+          <p>Immersive Art Installation & Logistics Execution</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SAY HELLO CTA -->
+  <section class="say-hello">
+    <div class="say-hello-text">
+      SAY
+      <div class="mask-video-box">
+        <img src="assets/hero.png" alt="Greeting video snippet">
+      </div>
+      HELLO
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">
+          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+        </a>
+        <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem; max-width: 300px;">
+          A premium creative collective based in Nigeria. Synthesizing branding, video, and design systems for ambitious ventures.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="media.html">Media Services</a></li>
+          <li><a href="gifts.html">Corporate Gifts</a></li>
+          <li><a href="events.html">Events Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Agency</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="about.html#team">The Team</a></li>
+          <li><a href="about.html#process">Our Process</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>OFFICE</h4>
+        <address class="footer-address">
+          Suite FF002, Neighborhood Centre, Area 3,<br>
+          Garki. Abuja. FCT.<br>
+          <br>
+          <a href="mailto:reachus@colourandcodes.ng">reachus@colourandcodes.ng</a><br>
+          <a href="tel:+2348096299096">+234-809-629-9096</a>
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Colours and Codes. All rights reserved.
+      </div>
+      <div class="footer-copy" style="opacity: 0.4;">
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printing & Signage | Colours and Codes</title>
+  <meta name="description" content="Premium large format printing, stationery, 3D signs, and wayfinding systems in Nigeria.">
+  <meta property="og:title" content="Printing & Signage | Colours and Codes">
+  <meta property="og:description" content="Premium large format printing, stationery, 3D signs, and wayfinding systems in Nigeria.">
+  <meta property="og:image" content="assets/hero.png">
+  <meta property="og:url" content="https://colourandcodes.ng/printing.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="Images/brand logo/Untitled-design-36-1.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-theme');
+    }
+  </script>
+  <style>
+    .service-hero {
+      padding: 160px 6% 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .service-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .service-hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 80px 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .service-capabilities h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 30px;
+      color: var(--color-green);
+    }
+    .capability-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .capability-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .capability-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .benefits-panel {
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 50px;
+    }
+    .benefits-panel h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 30px;
+    }
+    .benefit-stat {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 24px;
+    }
+    .stat-number {
+      font-family: var(--font-accent);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-green);
+    }
+    .stat-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 992px) {
+      .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+  </style>
+</head>
+<body class="page-transition-enter">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+    </a>
+    
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle active">What We Do</a>
+        <ul class="dropdown-menu">
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="gifts.html">Gifts</a></li>
+          <li><a href="printing.html" class="active">Printing & Signage</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+      </svg>
+      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
+    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start a Project</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="service-hero">
+    <h1 class="reveal-text-container">
+      <span class="font-manrope">P</span>rin<span class="font-pilowlava">t</span>ing <br>& <span style="color: var(--color-green);"><span class="font-pilowlava">S</span>igna<span class="font-manrope">g</span>e</span>
+    </h1>
+    <p>High-Fidelity Tactile Production combining physical craftsmanship with precise layout logic for unmissable impact.</p>
+    <div class="media-container">
+      <img src="assets/hero.png" alt="Printing and signage machinery mockup" />
+    </div>
+  </header>
+
+  <!-- SERVICE DETAIL GRID -->
+  <section class="service-detail-grid">
+    <div class="service-capabilities">
+      <h2>What We Do</h2>
+      <div class="capability-list">
+        
+        <div class="capability-item">
+          <h3>Large Format Printing</h3>
+          <p>Deploying ultra-high resolution prints for billboards, building wraps, vehicle decals, and wall murals that maintain sharp details at extreme scales.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>Premium Stationery & Collaterals</h3>
+          <p>Synthesizing print setups for executive business cards, textured letterheads, multi-page company profiles, folders, and brochures.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>3D Signage & Wayfinding</h3>
+          <p>Engineering customized indoor and outdoor 3D acrylic lettering, illuminated lightboxes, directory signs, and architectural direction plates.</p>
+        </div>
+
+        <div class="capability-item">
+          <h3>Exhibition Display Assets</h3>
+          <p>Fabricating high-impact event display systems including rollup stands, fabric pop-up backdrops, promoter counters, and flags.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BENEFITS PANEL -->
+    <div class="benefits-panel">
+      <h2>Why Invest in Quality Print?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">
+        Physical touchpoints possess a cognitive durability that digital displays cannot duplicate. High-quality materials and color consistency project structural stability.
+      </p>
+      
+      <div class="capability-list" style="margin-top: 30px;">
+        <div class="capability-item">
+          <h4 style="color: var(--color-yellow);">Tactile Brand Recall</h4>
+          <p style="font-size: 0.9rem;">Receiving a premium textured card or visiting a well-signed office leaves a concrete memory of luxury and professionalism.</p>
+        </div>
+
+        <div class="capability-item">
+          <h4 style="color: var(--color-yellow);">Chromatic Integrity</h4>
+          <p style="font-size: 0.9rem;">Precise color calibrations ensure that your brand values and visual assets translate perfectly onto paper, fabric, acrylic, or vinyl.</p>
+        </div>
+      </div>
+
+      <div class="benefit-stat">
+        <div class="stat-number">82%</div>
+        <div class="stat-text">
+          Of buyers trust printed materials and signage more than digital advertisements when making key brand decisions (Source: MarketingSherpa).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK PREVIEW -->
+  <section class="work-section" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <h2 style="margin-bottom: 40px; text-align: center;">Recent Production Work</h2>
+    <div class="work-grid" style="grid-template-columns: repeat(2, 1fr);">
+      
+      <!-- Card 1: EKO ATLANTIC -->
+      <div class="work-card work-card-3">
+        <div class="card-top">
+          <span class="card-logo">EKO BILLBOARD</span>
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+        <img src="assets/hero.png" alt="Large format outdoor billboard" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
+        <div class="card-bottom">
+          <h3>Out-of-Home Campaign</h3>
+          <p>Large Format Printing & Installation</p>
+        </div>
+      </div>
+
+      <!-- Card 2: INTERCONTINENTAL -->
+      <div class="work-card work-card-1">
+        <div class="card-top">
+          <span class="card-logo">HOTEL WAYFINDING</span>
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+        <img src="assets/wales.png" alt="Bespoke luxury signboards" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
+        <div class="card-bottom">
+          <h3>Wayfinding & Acrylics</h3>
+          <p>Premium 3D Corporate Signs</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SAY HELLO CTA -->
+  <section class="say-hello">
+    <div class="say-hello-text">
+      SAY
+      <div class="mask-video-box">
+        <img src="assets/hero.png" alt="Greeting video snippet">
+      </div>
+      HELLO
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">
+          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+        </a>
+        <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem; max-width: 300px;">
+          A premium creative collective based in Nigeria. Synthesizing branding, video, and design systems for ambitious ventures.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="media.html">Media Services</a></li>
+          <li><a href="gifts.html">Corporate Gifts</a></li>
+          <li><a href="printing.html">Printing & Signage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Agency</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="about.html#team">The Team</a></li>
+          <li><a href="about.html#process">Our Process</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>OFFICE</h4>
+        <address class="footer-address">
+          Suite FF002, Neighborhood Centre, Area 3,<br>
+          Garki. Abuja. FCT.<br>
+          <br>
+          <a href="mailto:reachus@colourandcodes.ng">reachus@colourandcodes.ng</a><br>
+          <a href="tel:+2348096299096">+234-809-629-9096</a>
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Colours and Codes. All rights reserved.
+      </div>
+      <div class="footer-copy" style="opacity: 0.4;">
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
