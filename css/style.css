@@ -556,7 +556,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-.story-left h2 span {
+.story-left h2 > span {
   display: block;
 }
 
