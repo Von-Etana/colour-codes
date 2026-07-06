@@ -92,7 +92,8 @@
     .team-img-placeholder {
       width: 100%;
       aspect-ratio: 1/1;
-      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+      background: var(--bg-primary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -139,58 +140,75 @@
       color: white;
     }
 
-    /* Process Infographic */
-    .process-section {
+    /* Methodology Deep Dive */
+    .methodology-section {
       padding: 100px 6%;
       max-width: 1400px;
       margin: 0 auto;
-      background: #000712;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .process-header {
+    .methodology-header {
       text-align: center;
       margin-bottom: 60px;
     }
-    .process-header h2 {
+    .methodology-header h2 {
       font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 16px;
     }
-    .process-flow {
+    .methodology-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
-      position: relative;
     }
-    .process-card {
-      position: relative;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: var(--border-radius-md);
-      padding: 30px;
+    .methodology-card {
+      background: var(--bg-primary);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius-lg);
+      padding: 40px 30px;
       transition: var(--transition-smooth);
     }
-    .process-card:hover {
-      background: rgba(255, 255, 255, 0.05);
+    .methodology-card:hover {
       border-color: var(--color-green);
     }
-    .process-number {
-      font-family: var(--font-accent);
-      font-size: 3rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.1);
-      position: absolute;
-      top: 10px;
-      right: 20px;
-    }
-    .process-card h3 {
-      font-size: 1.3rem;
-      margin-top: 20px;
-      margin-bottom: 12px;
+    .methodology-card h3 {
+      font-size: 1.4rem;
       color: var(--color-green);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
     }
-    .process-card p {
+    .methodology-card h3 span {
+      font-family: var(--font-accent);
+      opacity: 0.5;
+    }
+    .deliverables-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .deliverable-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 16px;
+    }
+    .deliverable-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .deliverable-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .deliverable-desc {
       font-size: 0.9rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     @media (max-width: 992px) {
@@ -201,15 +219,13 @@
       .team-grid {
         grid-template-columns: 1fr 1fr;
       }
-      .process-flow {
-        grid-template-columns: 1fr 1fr;
+      .methodology-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
     }
     @media (max-width: 576px) {
       .team-grid {
-        grid-template-columns: 1fr;
-      }
-      .process-flow {
         grid-template-columns: 1fr;
       }
     }
@@ -220,7 +236,7 @@
     <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="logo">
-      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
     </a>
     
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
@@ -239,6 +255,7 @@
           <li><a href="media.html">Media</a></li>
           <li><a href="gifts.html">Gifts</a></li>
           <li><a href="printing.html">Printing & Signage</a></li>
+          <li><a href="events.html">Corporate Events</a></li>
         </ul>
       </li>
       <li><a href="contact.html">Contact</a></li>
@@ -251,26 +268,34 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     </button>
-    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start a Project</button>
+    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start <span class="hide-mobile">a Project</span></button>
   </nav>
 
   <!-- HERO SECTION -->
   <section class="about-hero">
-    <h1 class="reveal-text-container" style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px;">
-      <span class="font-manrope">O</span>ur <span class="font-pilowlava">S</span>to<span class="font-pilowlava">r</span>y <br>And <span style="color: var(--color-green);"><span class="font-manrope">V</span>alu<span class="font-pilowlava">e</span>s</span>
+    <h1 class="reveal-text-container" style="font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.15; margin-bottom: 20px;">
+      Built for <span class="font-pilowlava">I</span>nstitutions. <br>
+      Benchmarked <span class="font-pilowlava">G</span>lobally. <br>
+      Based in <span style="color: var(--color-green);"><span class="font-pilowlava">A</span>buja</span>.
     </h1>
     <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px;">
-      We are a multidisciplinary creative agency in Nigeria crafting visual structures, events, and print media that connect brands directly to their audience.
+      We craft brand communications and premium production assets built to international standards for Nigeria's leading corporate and diplomatic names.
     </p>
 
     <div class="about-grid">
       <div class="about-story">
         <h2>Our Story</h2>
         <p>
-          Founded in Lagos, Colours and Codes emerged from a collective desire to challenge traditional brand agency frameworks. We saw a gap between tactical visual designs and experiential activations, and set out to bridge them under a unified narrative setup.
+          Colours and Codes was founded on a simple observation: Nigeria's most important institutions deserved brand communications that matched their significance. Not templated work. Not "good enough for Africa." Work that could stand beside the world's best — because it was built to the same standard.
         </p>
         <p>
-          Today, we work with corporate enterprises, luxury developers, and high-impact leaders to establish premium identities, custom gifts packaging, and immersive experiences that live on.
+          We began by serving the organisations with the highest standards: United Nations agencies operating in Nigeria. The work demanded compliance with global brand guidelines, production at institutional scale, and stakeholder management across government, diplomatic, and community contexts. We delivered. Repeatedly.
+        </p>
+        <p>
+          Today, we bring that same discipline to Abuja's corporate sector — to law firms competing for federal contracts, to real estate developers launching landmark properties, to multinationals establishing their Nigerian presence, and to government agencies communicating with citizens.
+        </p>
+        <p>
+          We are based in Abuja because we believe Nigeria's capital deserves a creative partner that understands its unique institutional culture — the formality of the Three Arms Zone, the diplomacy of Maitama, the commerce of the Central Business District. We are Nigerians, designing for Nigeria, benchmarked against the world.
         </p>
       </div>
 
@@ -295,40 +320,73 @@
     </div>
   </section>
 
-  <!-- INFOGRAPHIC PROCESS -->
-  <section class="process-section" id="process">
-    <div class="process-header">
-      <h2>Our Workflow Process</h2>
-      <p style="color: var(--text-muted); margin-top: 10px;">A linear approach to complex creative deliverables.</p>
-    </div>
-    <div class="process-flow">
-      
-      <div class="process-card">
-        <div class="process-number">01</div>
-        <h3>Discovery</h3>
-        <p>We research your industry, run workshops, and identify positioning metrics to form a creative brief.</p>
+    <!-- METHODOLOGY DEEP DIVE -->
+    <section class="methodology-section" id="process">
+      <div class="methodology-header">
+        <h2>Methodology Deep Dive</h2>
+        <p style="color: var(--text-muted); margin-top: 10px;">A structured, institutional process from research to final quality control.</p>
       </div>
+      <div class="methodology-grid">
+        
+        <!-- Discovery Phase -->
+        <div class="methodology-card">
+          <h3>Discovery Phase <span>01</span></h3>
+          <div class="deliverables-list">
+            <div class="deliverable-item">
+              <div class="deliverable-name">Brand Audit Report</div>
+              <div class="deliverable-desc">Comprehensive assessment of current visual identity, messaging, and competitive positioning.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Stakeholder Map</div>
+              <div class="deliverable-desc">Identification of all audience segments and their brand relationship requirements.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Creative Brief</div>
+              <div class="deliverable-desc">Documented project objectives, success metrics, constraints, and approval workflow.</div>
+            </div>
+          </div>
+        </div>
 
-      <div class="process-card">
-        <div class="process-number">02</div>
-        <h3>Design System</h3>
-        <p>We synthesize logo marks, color spaces, layouts, and print styles, developing prototypes and assets.</p>
+        <!-- Design System Phase -->
+        <div class="methodology-card">
+          <h3>Design System Phase <span>02</span></h3>
+          <div class="deliverables-list">
+            <div class="deliverable-item">
+              <div class="deliverable-name">Visual Identity System</div>
+              <div class="deliverable-desc">Logo system, colour palette, typography hierarchy, graphic elements, and photography direction.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Messaging Framework</div>
+              <div class="deliverable-desc">Key messages, tone of voice guidance, and sample copy for primary use cases.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Application Mockups</div>
+              <div class="deliverable-desc">Key application previews (stationery, digital, environmental, and print formats).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Production Phase -->
+        <div class="methodology-card">
+          <h3>Production Phase <span>03</span></h3>
+          <div class="deliverables-list">
+            <div class="deliverable-item">
+              <div class="deliverable-name">Print-Ready Files</div>
+              <div class="deliverable-desc">Pantone-specified, die-line-accurate production files along with complete vendor liaison.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Digital Asset Library</div>
+              <div class="deliverable-desc">Organised file structure with web, print, social, and presentation formats.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-name">Quality Control Report</div>
+              <div class="deliverable-desc">Production sample review, colour matching verification, and finish confirmation.</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="process-card">
-        <div class="process-number">03</div>
-        <h3>Production</h3>
-        <p>We execute filming, build structures, compile custom corporate products, and print visual assets.</p>
-      </div>
-
-      <div class="process-card">
-        <div class="process-number">04</div>
-        <h3>Rollout</h3>
-        <p>We launch media assets, orchestrate events, distribute guidelines, and secure high-impact presence.</p>
-      </div>
-
-    </div>
-  </section>
+    </section>
 
   <!-- TEAM GRID -->
   <section class="team-section" id="team">
@@ -346,7 +404,7 @@
         <div class="team-info">
           <h3>Fola Adewale</h3>
           <div class="team-role">Creative Director & Founder</div>
-          <p class="team-bio">Formulating branding frameworks and creative campaigns for Nigeria’s leading corporate names.</p>
+          <p class="team-bio">Formulating branding frameworks for Nigeria's leading corporate and institutional names.</p>
           <div class="team-social">
             <a href="#">LinkedIn</a>
             <a href="#">Twitter</a>
@@ -362,7 +420,7 @@
         <div class="team-info">
           <h3>Amara Okafor</h3>
           <div class="team-role">Head of Media & Production</div>
-          <p class="team-bio">Overseeing cinematography, photography, and commercial storytelling layouts across regions.</p>
+          <p class="team-bio">Overseeing cinematography, photography, and commercial storytelling across Nigeria's corporate and diplomatic sectors.</p>
           <div class="team-social">
             <a href="#">LinkedIn</a>
             <a href="#">Vimeo</a>
@@ -378,7 +436,7 @@
         <div class="team-info">
           <h3>Tobi Alabi</h3>
           <div class="team-role">Event Experience Lead</div>
-          <p class="team-bio">Executing corporate conferences, product rollouts, and branded events with premium metrics.</p>
+          <p class="team-bio">Executing corporate conferences, product launches, and ministerial events with precision at scale.</p>
           <div class="team-social">
             <a href="#">LinkedIn</a>
             <a href="#">Instagram</a>
@@ -405,7 +463,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <a href="index.html" class="logo">
-          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
         </a>
         <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem; max-width: 300px;">
           A premium creative collective based in Nigeria. Synthesizing branding, video, and design systems for ambitious ventures.

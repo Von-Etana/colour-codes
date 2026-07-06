@@ -23,7 +23,7 @@
     <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="logo">
-      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
     </a>
     
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
@@ -42,6 +42,7 @@
           <li><a href="media.html">Media</a></li>
           <li><a href="gifts.html">Gifts</a></li>
           <li><a href="printing.html">Printing & Signage</a></li>
+          <li><a href="events.html">Corporate Events</a></li>
         </ul>
       </li>
       <li><a href="contact.html">Contact</a></li>
@@ -54,7 +55,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     </button>
-    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start a Project</button>
+    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start <span class="hide-mobile">a Project</span></button>
   </nav>
 
   <!-- HERO SECTION -->
@@ -122,37 +123,81 @@
       
       <!-- Branding Column -->
       <div class="service-column" data-page="branding.html">
-        <span class="service-num">01</span>
-        <h3 class="service-name">Branding</h3>
-        <div class="service-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="service-bg" style="background-image: url('assets/brand_strategy.png');"></div>
+        <div class="service-overlay"></div>
+        <div class="service-top">
+          <span class="service-num">01</span>
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Brand Strategy & Identity</h3>
+          <p class="service-desc">Positioning, visual identity systems, and brand guidelines that scale across your organisation. From initial audit to final deployment.</p>
         </div>
       </div>
 
       <!-- Media Column -->
       <div class="service-column" data-page="media.html">
-        <span class="service-num">02</span>
-        <h3 class="service-name">Media</h3>
-        <div class="service-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7a2 2 0 0 0-2-2h-4l-3-3H10L7 5H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="4"/></svg>
+        <div class="service-bg" style="background-image: url('assets/media_production.png');"></div>
+        <div class="service-overlay"></div>
+        <div class="service-top">
+          <span class="service-num">02</span>
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7a2 2 0 0 0-2-2h-4l-3-3H10L7 5H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Media Production</h3>
+          <p class="service-desc">Commercial photography, videography, and digital content production that maintains brand consistency across every channel.</p>
         </div>
       </div>
 
       <!-- Gifts Column -->
       <div class="service-column" data-page="gifts.html">
-        <span class="service-num">03</span>
-        <h3 class="service-name">Corporate Gifts</h3>
-        <div class="service-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        <div class="service-bg" style="background-image: url('assets/corporate_gifting.png');"></div>
+        <div class="service-overlay"></div>
+        <div class="service-top">
+          <span class="service-num">03</span>
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Corporate Gifting</h3>
+          <p class="service-desc">Premium branded merchandise and executive gifting programs that reinforce relationships and communicate value.</p>
         </div>
       </div>
 
       <!-- Prints Column -->
       <div class="service-column" data-page="printing.html">
-        <span class="service-num">04</span>
-        <h3 class="service-name">Prints & Signage</h3>
-        <div class="service-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <div class="service-bg" style="background-image: url('assets/print_production.png');"></div>
+        <div class="service-overlay"></div>
+        <div class="service-top">
+          <span class="service-num">04</span>
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Print Production & Signage</h3>
+          <p class="service-desc">From conference materials to office signage — production at scale with Pantone precision, delivered on deadline.</p>
+        </div>
+      </div>
+
+      <!-- Events Column -->
+      <div class="service-column" data-page="events.html">
+        <div class="service-bg" style="background-image: url('assets/corporate_events.png');"></div>
+        <div class="service-overlay"></div>
+        <div class="service-top">
+          <span class="service-num">05</span>
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Corporate Events</h3>
+          <p class="service-desc">Event Branding That Matches the Occasion</p>
         </div>
       </div>
 
@@ -202,20 +247,20 @@
         </div>
       </div>
 
-      <!-- Card 2: FUTURE -->
-      <div class="work-card work-card-2">
+      <!-- Card 2: UN AGENCY CASE STUDY -->
+      <div class="work-card work-card-2" onclick="openCaseStudyModal()" style="cursor: pointer;">
         <div class="card-top">
-          <span class="card-logo">FUTURE</span>
+          <span class="card-logo">UN AGENCY</span>
           <div class="card-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </div>
         </div>
-        <img src="assets/future.png" alt="Future branding campaign" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
+        <img src="assets/future.png" alt="UN Agency repositioning campaign" style="width: 100%; height: auto; border-radius: var(--border-radius-md); object-fit: cover; margin: 20px 0;">
         <div class="card-bottom">
-          <h3>The New Frontier</h3>
-          <p>Digital Strategy & Identity Deployment</p>
+          <h3>Strategic Repositioning</h3>
+          <p>Brand Strategy / NGO Heritage / UN Agency</p>
         </div>
       </div>
 
@@ -264,6 +309,61 @@
         <div class="partner-logo-box"><img src="Images/partners' logo/jhpiego.png" alt="Partner"></div>
         <div class="partner-logo-box"><img src="Images/partners' logo/undp-logo-png_seeklogo-322648.png" alt="Partner"></div>
         <div class="partner-logo-box"><img src="Images/partners' logo/unhcr-logo-png_seeklogo-144883.png" alt="Partner"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE (SEGMENT MESSAGING) -->
+  <section class="segment-section" style="padding: 100px 6%; max-width: 1400px; margin: 0 auto; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 50px;">
+      <span style="color: var(--color-green); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Institutional Alignment</span>
+      <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;">Who We Serve</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin-top: 12px; font-size: 1.1rem;">Frameworks engineered to perform within Nigeria's unique regulatory and commercial landscapes.</p>
+    </div>
+    
+    <div class="segment-container" style="display: grid; grid-template-columns: 1fr 2fr; gap: 60px;">
+      <!-- Tabs (Left) -->
+      <div class="segment-tabs" style="display: flex; flex-direction: column; gap: 16px;">
+        <button class="segment-tab-btn active" onclick="showSegment('govt', this)" style="background: var(--bg-secondary); border: 1px solid var(--color-green); border-radius: var(--border-radius-md); padding: 24px; text-align: left; cursor: pointer; color: white; transition: var(--transition-smooth); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; width: 100%;">
+          Government Parastatals
+        </button>
+        <button class="segment-tab-btn" onclick="showSegment('multinational', this)" style="background: var(--bg-primary); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--border-radius-md); padding: 24px; text-align: left; cursor: pointer; color: white; transition: var(--transition-smooth); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; width: 100%;">
+          Multinationals
+        </button>
+        <button class="segment-tab-btn" onclick="showSegment('services', this)" style="background: var(--bg-primary); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--border-radius-md); padding: 24px; text-align: left; cursor: pointer; color: white; transition: var(--transition-smooth); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; width: 100%;">
+          Professional Services
+        </button>
+        <button class="segment-tab-btn" onclick="showSegment('events', this)" style="background: var(--bg-primary); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--border-radius-md); padding: 24px; text-align: left; cursor: pointer; color: white; transition: var(--transition-smooth); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; width: 100%;">
+          Event Producers
+        </button>
+      </div>
+      
+      <!-- Content Panel (Right) -->
+      <div class="segment-panels" style="background: var(--bg-secondary); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--border-radius-lg); padding: 50px; display: flex; flex-direction: column; justify-content: center; min-height: 300px;">
+        <div id="panel-govt" class="segment-panel" style="display: block;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--color-green);">Government Parastatals</h3>
+          <p style="color: var(--text-main); font-size: 1.15rem; line-height: 1.7; font-weight: 400;">
+            Procurement-compliant branding with full documentation. We understand the approval chains, the review cycles, and the compliance requirements of government communications — because we've delivered them for federal agencies and international bodies operating in Nigeria.
+          </p>
+        </div>
+        <div id="panel-multinational" class="segment-panel" style="display: none;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--color-green);">Multinationals Entering Nigeria</h3>
+          <p style="color: var(--text-main); font-size: 1.15rem; line-height: 1.7; font-weight: 400;">
+            Your global brand, intelligently adapted for Nigeria. We maintain brand consistency with your international guidelines while ensuring cultural resonance, regulatory compliance, and local production efficiency.
+          </p>
+        </div>
+        <div id="panel-services" class="segment-panel" style="display: none;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--color-green);">Professional Services Firms</h3>
+          <p style="color: var(--text-main); font-size: 1.15rem; line-height: 1.7; font-weight: 400;">
+            The difference between winning and losing a federal pitch often comes down to presentation. We create brand systems that communicate competence before you speak a word — in your proposal documents, your conference materials, and your digital presence.
+          </p>
+        </div>
+        <div id="panel-events" class="segment-panel" style="display: none;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--color-green);">Conference & Event Producers</h3>
+          <p style="color: var(--text-main); font-size: 1.15rem; line-height: 1.7; font-weight: 400;">
+            Event-day execution at institutional scale. From the Abuja International Conference Centre to ministerial launches at Aso Rock, we deliver high-volume print, signage, and VIP collateral with the reliability that high-stakes events demand.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -321,7 +421,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <a href="index.html" class="logo">
-          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
         </a>
         <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem; max-width: 300px;">
           A premium creative collective based in Nigeria. Synthesizing branding, video, and design systems for ambitious ventures.
@@ -330,9 +430,11 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul class="footer-links">
-          <li><a href="branding.html">Branding</a></li>
-          <li><a href="media.html">Media Services</a></li>
-          <li><a href="gifts.html">Corporate Gifts</a></li>
+          <li><a href="branding.html">Brand Strategy</a></li>
+          <li><a href="media.html">Media Production</a></li>
+          <li><a href="gifts.html">Corporate Gifting</a></li>
+          <li><a href="printing.html">Printing & Signage</a></li>
+          <li><a href="events.html">Corporate Events</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -348,9 +450,9 @@
         <h4>OFFICE</h4>
         <address class="footer-address">
           Suite FF002, Neighborhood Centre, Area 3,<br>
-          Garki. Abuja. FCT.<br>
+          Garki, Abuja, FCT<br>
           <br>
-          <a href="mailto:reachus@colourandcodes.ng">reachus@colourandcodes.ng</a><br>
+          <a href="mailto:reachus@coloursandcodes.ng">reachus@coloursandcodes.ng</a><br>
           <a href="tel:+2348096299096">+234-809-629-9096</a>
         </address>
       </div>
@@ -364,6 +466,94 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function showSegment(segmentId, buttonEl) {
+      // Hide all panels
+      document.querySelectorAll('.segment-panel').forEach(function(panel) {
+        panel.style.display = 'none';
+      });
+      // Show selected panel
+      document.getElementById('panel-' + segmentId).style.display = 'block';
+      
+      // Deactivate all tab buttons
+      document.querySelectorAll('.segment-tab-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+        btn.style.background = 'var(--bg-primary)';
+        btn.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+      });
+      // Activate selected button
+      buttonEl.classList.add('active');
+      buttonEl.style.background = 'var(--bg-secondary)';
+      buttonEl.style.borderColor = 'var(--color-green)';
+    }
+
+    function openCaseStudyModal() {
+      const modal = document.getElementById('case-study-modal');
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeCaseStudyModal() {
+      const modal = document.getElementById('case-study-modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+
+  <!-- CASE STUDY MODAL -->
+  <div id="case-study-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: rgba(0, 11, 26, 0.96); z-index: 2000; overflow-y: auto; padding: 60px 6%;">
+    <div style="max-width: 900px; margin: 0 auto; background: var(--bg-secondary); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--border-radius-lg); padding: 50px; position: relative;">
+      
+      <button onclick="closeCaseStudyModal()" style="position: absolute; top: 30px; right: 30px; background: none; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 44px; height: 44px; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-smooth); font-size: 1.5rem; outline: none;">
+        &times;
+      </button>
+
+      <span style="color: var(--color-green); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 12px;">NGO Heritage Case Study</span>
+      <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.25; margin-bottom: 40px; color: white;">
+        Repositioning a UN Agency for a New Strategic Plan
+      </h2>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 32px; text-align: left;">
+        
+        <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 24px;">
+          <h3 style="color: var(--color-yellow); font-size: 1.2rem; margin-bottom: 8px;">Client Context</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            A UN development agency operating across 12 Nigerian states needed to align its visual identity with a new five-year strategic plan focused on youth employment and digital transformation.
+          </p>
+        </div>
+
+        <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 24px;">
+          <h3 style="color: var(--color-yellow); font-size: 1.2rem; margin-bottom: 8px;">The Challenge</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            The existing brand felt dated and donor-focused. The agency needed to signal relevance to young Nigerians while maintaining credibility with government partners and international funders.
+          </p>
+        </div>
+
+        <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 24px;">
+          <h3 style="color: var(--color-yellow); font-size: 1.2rem; margin-bottom: 8px;">The Approach</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            We conducted stakeholder interviews across three states, audited all existing brand touchpoints, and developed a dual-audience identity system — vibrant and forward-facing for youth communications; restrained and institutional for government and donor materials.
+          </p>
+        </div>
+
+        <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 24px;">
+          <h3 style="color: var(--color-yellow); font-size: 1.2rem; margin-bottom: 8px;">The Deliverables</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            Complete visual identity system, brand guidelines (68 pages), stationery suite, report templates, social media toolkit, event branding for national launch, training session for 24 communications staff.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: var(--color-green); font-size: 1.2rem; margin-bottom: 8px;">The Outcome</h3>
+          <p style="color: var(--text-main); line-height: 1.6; font-size: 1.05rem;">
+            Brand system adopted across all 12 state offices. Launch event materials praised by visiting UN Under-Secretary. 40% reduction in design turnaround time for state communications teams.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

@@ -24,7 +24,7 @@
     <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="logo">
-      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+      <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
     </a>
     
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
@@ -43,6 +43,7 @@
           <li><a href="media.html">Media</a></li>
           <li><a href="gifts.html">Gifts</a></li>
           <li><a href="printing.html">Printing & Signage</a></li>
+          <li><a href="events.html">Corporate Events</a></li>
         </ul>
       </li>
       <li><a href="contact.html" class="active">Contact</a></li>
@@ -55,55 +56,67 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     </button>
-    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start a Project</button>
+    <button class="btn-pill" id="start-project-btn" onclick="window.location.href='contact.html'">Start <span class="hide-mobile">a Project</span></button>
   </nav>
 
   <!-- CONTACT HERO SECTION -->
   <section class="about-hero contact-hero-padding" style="padding-bottom: 20px; display: flex; flex-direction: column; align-items: center; text-align: center;">
     <h1 class="reveal-text-container" style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 20px;">
-      <span class="font-manrope">L</span>et's <span class="font-manrope">B</span>uild <span class="font-pilowlava">S</span>omething <br><span style="color: var(--color-green);"><span class="font-pilowlava">R</span>ema<span class="font-pilowlava">r</span>kable</span>
+      Let's Build <br><span style="color: var(--color-green);">Something That Performs</span>
     </h1>
     <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px;">
-      Whether you need a full architectural rebrand, digital media rollout, or premium corporate assets, our team is ready to collaborate.
+      Whether you need an institutional rebrand, digital media rollout, or premium event production, we are ready to serve.
     </p>
   </section>
 
   <!-- CONTACT GRID SECTION -->
   <section class="contact-section">
     <div class="contact-grid">
-      <!-- Left Column: Contact Info -->
+      <!-- Left Column: Contact Info & Booking -->
       <div class="contact-info">
         <div class="contact-info-block">
           <h3>Office Location</h3>
-          <p>Suite FF002, Neighborhood Centre, Area 3,<br>Garki. Abuja. FCT.</p>
+          <p>Suite FF002, Neighborhood Centre, Area 3,<br>Garki, Abuja, FCT</p>
         </div>
         
         <div class="contact-info-block">
           <h3>Email Us</h3>
-          <a href="mailto:reachus@colourandcodes.ng">reachus@colourandcodes.ng</a>
+          <a href="mailto:reachus@coloursandcodes.ng">reachus@coloursandcodes.ng</a>
         </div>
         
         <div class="contact-info-block">
           <h3>Call Us</h3>
           <a href="tel:+2348096299096">+234-809-629-9096</a>
         </div>
-        
+
         <div class="contact-info-block">
-          <h3>Follow Us</h3>
-          <div class="social-links">
-            <a href="#" aria-label="LinkedIn" style="color: var(--color-blue);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-            <a href="#" aria-label="Twitter" style="color: var(--color-cyan);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-            <a href="#" aria-label="Instagram" style="color: var(--color-orange);"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.666-.072-4.948c-.2-4.358-2.618-6.78-6.979-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          </div>
+          <h3>Immediate Enquiries</h3>
+          <a href="https://wa.me/2348096299096" class="btn-outline" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; margin-top: 10px; border-color: #25D366; color: #25D366;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.59 2.015 14.128.983 11.5.981 6.064.981 1.64 5.352 1.637 10.781c0 1.766.478 3.49 1.38 5.025l-.986 3.6 3.69-.968.326.192zm11.393-5.267c-.29-.145-1.716-.848-1.982-.945-.267-.097-.461-.146-.656.146-.195.29-.757.945-.928 1.14-.171.193-.342.217-.632.072-1.39-.702-2.42-1.16-3.385-1.992-.257-.222-.515-.494-.75-.765-.41-.475-.084-.712.18-.98.243-.242.29-.29.435-.58.145-.29.072-.542-.036-.76-.108-.218-.656-1.582-.898-2.164-.236-.57-.497-.492-.656-.492-.17-.008-.364-.01-.559-.01-.194 0-.51.072-.777.363-.267.29-1.02 1.016-1.02 2.479 0 1.463 1.042 2.879 1.189 3.073.145.194 2.052 3.197 4.972 4.457 2.92 1.26 2.92.84 3.454.792.533-.048 1.716-.702 1.958-1.38.243-.678.243-1.258.17-1.38-.072-.12-.267-.193-.559-.338z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <div style="background-color: var(--bg-secondary); border: 1px solid rgba(255, 255, 255, 0.1); padding: 35px 30px; border-radius: var(--border-radius-lg); margin-top: 40px; text-align: left;">
+          <h3 style="color: var(--color-green); font-size: 1.3rem; margin-bottom: 12px; font-weight: 800;">Book a 30-Minute Brand Consultation</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+            This is not a sales call. It's a working session where we assess your current brand position, identify the highest-impact opportunities, and outline an approach — whether you work with us or not. Available via video call or in-person at our Garki office.
+          </p>
+          <a href="https://wa.me/2348096299096?text=I'd like to book a 30-minute brand consultation" class="btn-outline" style="display: inline-block; font-size: 0.9rem; padding: 10px 24px;">Book Session via WhatsApp</a>
         </div>
       </div>
 
-      <!-- Right Column: Contact Form -->
+      <!-- Right Column: Project Inquiry Form -->
       <div>
-        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent!');">
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry Sent! We will contact you shortly.');">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="organisation">Organisation Name</label>
+            <input type="text" id="organisation" name="organisation" class="form-control" placeholder="Company or Agency Name" required>
           </div>
           
           <div class="form-group">
@@ -113,26 +126,62 @@
           
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+234 800 000 0000">
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+234 809 629 9096" required>
           </div>
           
           <div class="form-group">
-            <label for="service">Service Required</label>
-            <select id="service" name="service" class="form-control" required>
+            <label for="service_category">Service Category</label>
+            <select id="service_category" name="service_category" class="form-control" required>
               <option value="" disabled selected>Select a Service</option>
-              <option value="Branding">Branding</option>
-              <option value="Media Services">Media Services</option>
-              <option value="Corporate Gifts">Corporate Gifts</option>
-              <option value="Prints & Signage">Prints & Signage</option>
+              <option value="Brand Strategy & Identity">Brand Strategy & Identity</option>
+              <option value="Media Production">Media Production</option>
+              <option value="Corporate Gifting">Corporate Gifting</option>
+              <option value="Print Production & Signage">Print Production & Signage</option>
+              <option value="Corporate Events">Corporate Events</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="organisation_type">Organisation Type</label>
+            <select id="organisation_type" name="organisation_type" class="form-control" required>
+              <option value="" disabled selected>Select Organisation Type</option>
+              <option value="Government">Government Parastatal / Agency</option>
+              <option value="NGO">NGO / Development Agency</option>
+              <option value="Multinational">Multinational Corporation</option>
+              <option value="Corporate">Corporate / Enterprise</option>
+              <option value="Professional Services">Professional Services Firm</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">Project Timeline</label>
+            <select id="timeline" name="timeline" class="form-control" required>
+              <option value="" disabled selected>Select Timeline</option>
+              <option value="Immediate">Immediate (Within 30 days)</option>
+              <option value="1-3 Months">1 to 3 Months</option>
+              <option value="3-6 Months">3 to 6 Months</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select id="budget" name="budget" class="form-control" required>
+              <option value="" disabled selected>Select Budget Range</option>
+              <option value="Under 5M NGN">Under 5 Million NGN</option>
+              <option value="5M - 15M NGN">5 Million - 15 Million NGN</option>
+              <option value="15M - 50M NGN">15 Million - 50 Million NGN</option>
+              <option value="50M+ NGN">50 Million+ NGN</option>
             </select>
           </div>
           
           <div class="form-group">
             <label for="message">Project Details</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your project..." required></textarea>
+            <textarea id="message" name="message" class="form-control" placeholder="Tell us about your organisation, your current brand situation, and what you're looking to achieve." required></textarea>
           </div>
           
-          <button type="submit" class="btn-submit">Send Message</button>
+          <button type="submit" class="btn-submit">Send Inquiry</button>
         </form>
       </div>
     </div>
@@ -154,7 +203,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <a href="index.html" class="logo">
-          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 40px; margin-right: 8px;">
+          <img src="Images/brand logo/Untitled-design-36-1.png" alt="Colours and Codes Logo" style="height: 52px; margin-right: 8px;">
         </a>
         <p style="margin-top: 20px; opacity: 0.6; font-size: 0.95rem; max-width: 300px;">
           A premium creative collective based in Nigeria. Synthesizing branding, video, and design systems for ambitious ventures.
