@@ -1533,3 +1533,266 @@ body.light-theme .footer-links a:hover {
     padding: 30px !important;
   }
 }
+
+/* --- FOCUS RAIL CAROUSEL --- */
+.focus-rail-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #030408 !important; /* Neutral-950 equivalent */
+  padding: 100px 0 60px !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.focus-rail-bg-ambience {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.focus-rail-bg-ambience img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(80px) saturate(1.8);
+  opacity: 0.35;
+  transition: src 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  transform: scale(1.1);
+}
+
+.focus-rail-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #030408 0%, rgba(3, 4, 8, 0.45) 50%, #030408 100%);
+}
+
+.focus-rail-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 5%;
+  position: relative;
+  z-index: 2;
+}
+
+.focus-rail-stage {
+  perspective: 1400px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+  margin: 40px 0;
+  cursor: grab;
+}
+
+.focus-rail-stage:active {
+  cursor: grabbing;
+}
+
+.focus-rail-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+/* Individual Card Styling */
+.focus-rail-card {
+  position: absolute;
+  width: 290px;
+  height: 386px; /* Aspect 3:4 */
+  border-radius: 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #171717;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              filter 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.focus-rail-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.focus-rail-card-lighting {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+  pointer-events: none;
+}
+
+.focus-rail-card-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.1);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Info and Control Panel layout */
+.focus-rail-info-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.focus-rail-meta-content {
+  flex: 1;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.focus-rail-meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #10b981; /* Emerald-400 equivalent */
+  margin-bottom: 8px;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.focus-rail-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.focus-rail-desc {
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  max-width: 450px;
+}
+
+/* Navigation control controls styling */
+.focus-rail-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.focus-rail-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(23, 23, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 50px;
+  backdrop-filter: blur(12px);
+}
+
+.focus-rail-btn {
+  background: transparent;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #a3a3a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+.focus-rail-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.focus-rail-btn:active {
+  transform: scale(0.95);
+}
+
+.focus-rail-indicator {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #737373;
+  min-width: 50px;
+  text-align: center;
+}
+
+.focus-rail-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  color: black !important;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.focus-rail-explore:hover {
+  transform: scale(1.05);
+  background-color: #f5f5f5;
+}
+
+.focus-rail-explore:active {
+  transform: scale(0.95);
+}
+
+.focus-rail-explore svg {
+  transition: transform 0.2s;
+}
+
+.focus-rail-explore:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .focus-rail-info-panel {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .focus-rail-meta-content {
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+  .focus-rail-controls {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .focus-rail-card {
+    width: 200px;
+    height: 266px;
+  }
+  .focus-rail-stage {
+    height: 300px;
+  }
+}

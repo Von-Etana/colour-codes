@@ -229,4 +229,439 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   }
+
+  // --- FOCUS RAIL 3D CAROUSEL CONTROLLER ---
+  const focusRailTrack = document.getElementById("focus-rail-track");
+  if (focusRailTrack) {
+    const items = [
+      {
+        id: "wales",
+        title: "Architectural Renaissance",
+        description: "Visual Identity & Brand Guidelines",
+        meta: "WALES",
+        imageSrc: "assets/wales.png",
+        href: "branding.html"
+      },
+      {
+        id: "un-agency",
+        title: "Strategic Repositioning",
+        description: "Brand Strategy / NGO Heritage / UN Agency",
+        meta: "UN AGENCY",
+        imageSrc: "assets/future.png",
+        href: "#",
+        modalTrigger: true
+      },
+      {
+        id: "gunclub",
+        title: "Abuja Leisure",
+        description: "High-End Corporate Assets",
+        meta: "GUN CLUB",
+        imageSrc: "assets/gunclub.png",
+        href: "branding.html"
+      },
+      {
+        id: "tokyo",
+        title: "Neon Tokyo",
+        description: "Experience the vibrant nightlife and illuminated streets of Shinjuku.",
+        meta: "Urban • Travel",
+        imageSrc: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop",
+        href: "#"
+      },
+      {
+        id: "nordic",
+        title: "Nordic Silence",
+        description: "Minimalist architecture meeting the raw beauty of the Icelandic coast.",
+        meta: "Design • Nature",
+        imageSrc: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000&auto=format&fit=crop",
+        href: "#"
+      }
+    ];
+
+    const blurImg = document.getElementById("focus-rail-blur-img");
+    const metaSpan = document.getElementById("focus-rail-item-meta");
+    const titleH3 = document.getElementById("focus-rail-item-title");
+    const descP = document.getElementById("focus-rail-item-desc");
+    const exploreLink = document.getElementById("focus-rail-explore-link");
+    const prevBtn = document.getElementById("focus-rail-prev");
+    const nextBtn = document.getElementById("focus-rail-next");
+    const indicator = document.getElementById("focus-rail-indicator");
+    const stage = document.getElementById("focus-rail-stage");
+
+    let activeIndex = 0;
+    const count = items.length;
+
+    // Render cards
+    const createCards = () => {
+      focusRailTrack.innerHTML = "";
+      items.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "focus-rail-card";
+        card.dataset.index = index;
+        
+        const img = document.createElement("img");
+        img.src = item.imageSrc;
+        img.alt = item.title;
+        
+        const lighting = document.createElement("div");
+        lighting.className = "focus-rail-card-lighting";
+        
+        const shadow = document.createElement("div");
+        shadow.className = "focus-rail-card-shadow";
+        
+        card.appendChild(img);
+        card.appendChild(lighting);
+        card.appendChild(shadow);
+        
+        card.addEventListener("click", () => {
+          if (index !== activeIndex) {
+            activeIndex = index;
+            updateCarousel();
+          }
+        });
+        
+        focusRailTrack.appendChild(card);
+      });
+    };
+
+    const wrapValue = (min, max, v) => {
+      const rangeSize = max - min;
+      return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+    };
+
+    const updateCarousel = () => {
+      const cards = focusRailTrack.querySelectorAll(".focus-rail-card");
+      const activeItem = items[activeIndex];
+
+      // Update ambient background image
+      if (blurImg) blurImg.src = activeItem.imageSrc;
+
+      // Update details panel with a smooth fade
+      const metaContent = document.getElementById("focus-rail-meta-content");
+      if (metaContent) {
+        metaContent.style.opacity = "0";
+        metaContent.style.transform = "translateY(8px)";
+        metaContent.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+
+        setTimeout(() => {
+          if (metaSpan) metaSpan.textContent = activeItem.meta;
+          if (titleH3) titleH3.textContent = activeItem.title;
+          if (descP) descP.textContent = activeItem.description || "";
+          if (exploreLink) {
+            exploreLink.href = activeItem.href;
+            if (activeItem.modalTrigger) {
+              exploreLink.setAttribute("onclick", "openCaseStudyModal(); return false;");
+            } else {
+              exploreLink.removeAttribute("onclick");
+            }
+          }
+
+          metaContent.style.opacity = "1";
+          metaContent.style.transform = "translateY(0)";
+        }, 250);
+      }
+
+      // Update index indicators
+      if (indicator) {
+        indicator.textContent = `${activeIndex + 1} / ${count}`;
+      }
+
+      // Loop through cards and place them based on offsets
+      cards.forEach((card, idx) => {
+        let offset = idx - activeIndex;
+        
+        const half = count / 2;
+        if (offset > half) offset -= count;
+        if (offset < -half) offset += count;
+
+        const isCenter = offset === 0;
+        const dist = Math.abs(offset);
+
+        if (dist > 2) {
+          card.style.opacity = "0";
+          card.style.visibility = "hidden";
+          card.style.pointerEvents = "none";
+          card.style.transform = `translateX(${offset * 320}px) translateZ(-400px) rotateY(${offset * -20}deg)`;
+          return;
+        }
+
+        card.style.visibility = "visible";
+        card.style.pointerEvents = "all";
+        
+        const screenWidth = window.innerWidth;
+        const spacing = screenWidth < 768 ? 220 : 320;
+        
+        const xOffset = offset * spacing;
+        const zOffset = -dist * 180;
+        const scale = isCenter ? 1 : 0.82;
+        const rotateY = offset * -22;
+        const opacity = isCenter ? 1 : Math.max(0.12, 1 - dist * 0.45);
+        const blur = isCenter ? 0 : dist * 6;
+        const brightness = isCenter ? 1 : 0.45;
+        
+        card.style.opacity = opacity;
+        card.style.filter = `blur(${blur}px) brightness(${brightness})`;
+        card.style.zIndex = 20 - dist;
+        card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${rotateY}deg)`;
+      });
+    };
+
+    const handlePrev = () => {
+      activeIndex = wrapValue(0, count, activeIndex - 1);
+      updateCarousel();
+    };
+
+    const handleNext = () => {
+      activeIndex = wrapValue(0, count, activeIndex + 1);
+      updateCarousel();
+    };
+
+    if (prevBtn) prevBtn.addEventListener("click", handlePrev);
+    if (nextBtn) nextBtn.addEventListener("click", handleNext);
+
+    // Keyboard listener
+    document.addEventListener("keydown", (e) => {
+      if (!stage) return;
+      const rect = stage.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
+    });
+
+    // Wheel listener (debounced horizontal scroll)
+    let lastWheelTime = 0;
+    if (stage) {
+      stage.addEventListener("wheel", (e) => {
+        const now = Date.now();
+        if (now - lastWheelTime < 450) {
+          e.preventDefault();
+          return;
+        }
+        
+        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        const delta = isHorizontal ? e.deltaX : e.deltaY;
+        
+        if (Math.abs(delta) > 25) {
+          e.preventDefault();
+          if (delta > 0) {
+            handleNext();
+          } else {
+            handlePrev();
+          }
+          lastWheelTime = now;
+        }
+      }, { passive: false });
+
+      // Swipe / drag gestures
+      let startX = 0;
+      let isDragging = false;
+      
+      stage.addEventListener("mousedown", (e) => {
+        startX = e.clientX;
+        isDragging = true;
+      });
+
+      document.addEventListener("mouseup", (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = e.clientX - startX;
+        if (Math.abs(diffX) > 80) {
+          if (diffX > 0) {
+            handlePrev();
+          } else {
+            handleNext();
+          }
+        }
+      });
+
+      stage.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      stage.addEventListener("touchend", (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diffX) > 60) {
+          if (diffX > 0) {
+            handlePrev();
+          } else {
+            handleNext();
+          }
+        }
+      }, { passive: true });
+    }
+
+    // Init
+    createCards();
+    updateCarousel();
+    window.addEventListener("resize", updateCarousel);
+  }
+
+  // --- CIRCULAR GALLERY 3D CONTROLLER ---
+  const circularGalleryTrack = document.getElementById("circular-gallery-track");
+  if (circularGalleryTrack) {
+    const galleryItems = [
+      {
+        common: 'Brand Strategy',
+        binomial: 'Visual Systems & Positioning',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1542744094-3a3121699563?w=900&auto=format&fit=crop&q=80',
+          text: 'Brand strategy presentation meeting',
+          pos: '50% 35%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Media Production',
+        binomial: 'Commercial Photography & Motion',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&auto=format&fit=crop&q=80',
+          text: 'Professional camera setup',
+          pos: '50% 50%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Corporate Gifting',
+        binomial: 'Executive Merchandise & Packaging',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=900&auto=format&fit=crop&q=80',
+          text: 'Luxury gift box package',
+          pos: '50% 50%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Print & Signage',
+        binomial: 'Pantone Precision at Scale',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=900&auto=format&fit=crop&q=80',
+          text: 'Large format printing machine',
+          pos: '50% 50%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Corporate Events',
+        binomial: 'Summit & Institutional Branding',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=900&auto=format&fit=crop&q=80',
+          text: 'Stage lighting and conference event',
+          pos: '50% 40%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Government Parastatals',
+        binomial: 'Procurement-Compliant Documentation',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=80',
+          text: 'Modern corporate architecture building',
+          pos: '50% 30%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Multinational Ventures',
+        binomial: 'Global Standards & Local Resonance',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80',
+          text: 'Diverse agency team collaborating',
+          pos: '50% 50%',
+          by: 'Unsplash'
+        }
+      },
+      {
+        common: 'Digital Storytelling',
+        binomial: 'Interactive Web & Motion Design',
+        photo: {
+          url: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=900&auto=format&fit=crop&q=80',
+          text: 'Designer working on digital interface',
+          pos: '50% 50%',
+          by: 'Unsplash'
+        }
+      }
+    ];
+
+    let rotation = 0;
+    let isScrolling = false;
+    let scrollTimeout = null;
+    const radius = window.innerWidth < 768 ? 320 : 520;
+    const autoRotateSpeed = 0.05;
+    const anglePerItem = 360 / galleryItems.length;
+
+    // Create cards
+    circularGalleryTrack.innerHTML = "";
+    const cardNodes = galleryItems.map((item, i) => {
+      const card = document.createElement("div");
+      card.className = "circular-gallery-card";
+      card.setAttribute("role", "group");
+      card.setAttribute("aria-label", item.common);
+      card.style.position = "absolute";
+      card.style.width = window.innerWidth < 768 ? "220px" : "280px";
+      card.style.height = window.innerWidth < 768 ? "300px" : "380px";
+      card.style.left = "50%";
+      card.style.top = "50%";
+      card.style.marginLeft = window.innerWidth < 768 ? "-110px" : "-140px";
+      card.style.marginTop = window.innerWidth < 768 ? "-150px" : "-190px";
+      card.style.transition = "opacity 0.3s linear";
+
+      card.innerHTML = `
+        <div class="circular-gallery-card-inner" style="position: relative; width: 100%; height: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);">
+          <img src="${item.photo.url}" alt="${item.photo.text}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: ${item.photo.pos || 'center'};" />
+          <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 16px; background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent); color: #ffffff;">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin: 0 0 4px 0; color: #ffffff;">${item.common}</h3>
+            <em style="font-size: 0.85rem; font-style: italic; opacity: 0.8; display: block;">${item.binomial}</em>
+            <p style="font-size: 0.75rem; margin-top: 6px; opacity: 0.7;">Photo by: ${item.photo.by}</p>
+          </div>
+        </div>
+      `;
+      circularGalleryTrack.appendChild(card);
+      return card;
+    });
+
+    const updateGalleryTransforms = () => {
+      circularGalleryTrack.style.transform = `rotateY(${rotation}deg)`;
+      const totalRotation = rotation % 360;
+
+      cardNodes.forEach((card, i) => {
+        const itemAngle = i * anglePerItem;
+        const relativeAngle = (itemAngle + totalRotation + 360) % 360;
+        const normalizedAngle = Math.abs(relativeAngle > 180 ? 360 - relativeAngle : relativeAngle);
+        const opacity = Math.max(0.35, 1 - (normalizedAngle / 180));
+        card.style.transform = `rotateY(${itemAngle}deg) translateZ(${radius}px)`;
+        card.style.opacity = opacity;
+      });
+    };
+
+    const handleScroll = () => {
+      isScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+      rotation = scrollProgress * 360;
+      updateGalleryTransforms();
+
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 150);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    const animateAutoRotate = () => {
+      if (!isScrolling) {
+        rotation += autoRotateSpeed;
+        updateGalleryTransforms();
+      }
+      requestAnimationFrame(animateAutoRotate);
+    };
+
+    updateGalleryTransforms();
+    requestAnimationFrame(animateAutoRotate);
+  }
 });
